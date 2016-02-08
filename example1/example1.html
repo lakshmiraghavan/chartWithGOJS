@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="minimal">
+<head>
+    <title>Minimal GoJS Sample with AngularJS</title>
+    <meta name="description" content="Interactive diagram implemented by GoJS using AngularJS, including a diagram directive and model binding." />
+    <!-- Copyright 1998-2016 by Northwoods Software Corporation. -->
+    <meta charset="UTF-8">
+
+
+    <script src="../bower_components/gojs/release/go-debug.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+    <script src="app1.js"></script>
+
+</head>
+<body ng-controller="MinimalCtrl"
+      onload="if (window.goSamples) goSamples()"> <!-- only needed for the goSamples framework -->
+<div id="sample">
+    <go-diagram go-model="model" style="border: solid 1px blue; width:100%; height:500px"></go-diagram>
+
+</div>
+</body>
+
+</html>

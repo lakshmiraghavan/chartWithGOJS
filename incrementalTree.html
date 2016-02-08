@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="bower_components/gojs/release/go-debug.js"></script>
+
+</head>
+<body>
+<div id="sample">
+    <div id="diagram" style="background-color: white; border: solid 1px black; width: 100%; height: 700px" ></div>
+
+
+</div>
+<script>
+    makeGraph(diagram)
+    function makeGraph(diagram) {
+        if (window.goSamples) goSamples();
+        var $ = go.GraphObject.make;
+
+        diagram.layout =
+                $(go.LayeredDigraphLayout,  // this will be discussed in a later section
+                        { columnSpacing: 5,
+                            setsPortSpots: false });
+
+        var nodeDataArray = [
+            { key: "Alpha" }, { key: "Beta" }, { key: "Gamma" }, { key: "Delta" },
+            { key: "Epsilon" }, { key: "Zeta" }, { key: "Eta" }, { key: "Theta" }
+        ];
+        var linkDataArray = [
+            { from: "Beta", to: "Alpha" },
+            { from: "Gamma", to: "Alpha" },
+            { from: "Delta", to: "Alpha" },
+            { from: "Alpha", to: "Epsilon" },
+            { from: "Alpha", to: "Zeta" },
+            { from: "Alpha", to: "Eta" },
+            { from: "Alpha", to: "Theta" }
+        ];
+        diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray);
+    }
+
+</script>
+</body>
+</html>
